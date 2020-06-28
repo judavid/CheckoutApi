@@ -1,11 +1,13 @@
-package com.logisticsevice.logistic.model;
+package com.checkoutservice.checkout.model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-public class Order implements Serializable  {
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+public class Order implements Serializable {
 	
 	private int clientId;
 	private Date date;

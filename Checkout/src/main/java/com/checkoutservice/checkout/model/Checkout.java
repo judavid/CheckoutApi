@@ -1,28 +1,28 @@
-package com.logisticsevice.logistic.model;
+package com.checkoutservice.checkout.model;
 
 import java.io.Serializable;
 import java.util.Date;
-import java.util.List;
 
-public class SentOrder implements Serializable  {
+public class Checkout implements Serializable {
 	
 	private String guide;
 	private int clientId;
 	private Date date;
 	private String shippingAddress;
 	private String shippingCompany;
-	private List<Product> products;
+	private Bill bill;
 	
+	public Checkout() {
+	}
 	
-	public SentOrder(String guide, int clientId, Date date, String shippingAddress, String shippingCompany,
-			List<Product> products) {
-		super();
+	public Checkout(String guide, int clientId, Date date, String shippingAddress, String shippingCompany,
+			Bill bill) {
 		this.guide = guide;
 		this.clientId = clientId;
 		this.date = date;
 		this.shippingAddress = shippingAddress;
 		this.shippingCompany = shippingCompany;
-		this.products = products;
+		this.bill = bill;
 	}
 	
 	public String getGuide() {
@@ -37,16 +37,12 @@ public class SentOrder implements Serializable  {
 	public void setClientId(int clientId) {
 		this.clientId = clientId;
 	}
-	
-	
 	public Date getDate() {
 		return date;
 	}
-
 	public void setDate(Date date) {
 		this.date = date;
 	}
-
 	public String getShippingAddress() {
 		return shippingAddress;
 	}
@@ -59,11 +55,13 @@ public class SentOrder implements Serializable  {
 	public void setShippingCompany(String shippingCompany) {
 		this.shippingCompany = shippingCompany;
 	}
-	public List<Product> getProducts() {
-		return products;
+
+	public Bill getBill() {
+		return bill;
 	}
-	public void setProducts(List<Product> products) {
-		this.products = products;
+
+	public void setBill(Bill bill) {
+		this.bill = bill;
 	}
 
 }

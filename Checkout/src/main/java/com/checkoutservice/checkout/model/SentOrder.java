@@ -1,10 +1,10 @@
-package com.logisticsevice.logistic.model;
+package com.checkoutservice.checkout.model;
 
 import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
-public class SentOrder implements Serializable  {
+public class SentOrder implements Serializable {
 	
 	private String guide;
 	private int clientId;
@@ -13,6 +13,8 @@ public class SentOrder implements Serializable  {
 	private String shippingCompany;
 	private List<Product> products;
 	
+	public SentOrder() {
+	}
 	
 	public SentOrder(String guide, int clientId, Date date, String shippingAddress, String shippingCompany,
 			List<Product> products) {

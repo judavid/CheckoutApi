@@ -1,4 +1,4 @@
-package com.billservice.bill.model;
+package com.checkoutservice.checkout.model;
 
 import java.io.Serializable;
 
@@ -7,10 +7,10 @@ public class Bill implements Serializable {
 	private Long sum;
 	private Order order;
 	
-	
+	public Bill() {
+	}
 
 	public Bill(Long sum, Order order) {
-		super();
 		this.sum = sum;
 		this.order = order;
 	}
