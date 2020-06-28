@@ -8,6 +8,8 @@ public class Product implements Serializable  {
 	private int quantity;
 	private long cost;
 	
+	public Product() {
+	}
 	
 	public Product(int id, int quantity, long cost) {
 		super();

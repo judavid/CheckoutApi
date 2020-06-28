@@ -3,6 +3,7 @@ package com.checkoutservice.checkout.business.services;
 import java.util.Arrays;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.env.Environment;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -18,21 +19,27 @@ import com.checkoutservice.checkout.model.SentOrder;
 @Service
 public class ClientRestService {
 	
-	private static final String URL_BILL_SERVICE = "http://localhost:8081/bill";
-	private static final String URL_LOGISTIC_SERVICE = "http://localhost:8082/logistic";
+	//this data must be parameters
+	private static final String PARAM_IP_PORT_BILL_SERVICE = "bill.host";
+	private static final String RESOURCE_PATH_BILL = "/bill";
+	private static final String PARAM_IP_PORT_LOGISTIC_SERVICE = "logistic.host";
+	private static final String RESOURCE_PATH_LOGISTIC = "/logistic";
+
 	
 	@Autowired
 	private RestTemplate clientRest;
+	@Autowired
+	private Environment env;
 	
 	public Bill callBillService(Order order) {
 		HttpEntity<Order> request = getHeaders(order);
-		ResponseEntity<Bill> response = clientRest.postForEntity(URL_BILL_SERVICE, request, Bill.class);
+		ResponseEntity<Bill> response = clientRest.postForEntity(env.getProperty(PARAM_IP_PORT_BILL_SERVICE) + RESOURCE_PATH_BILL, request, Bill.class);
 	    return response.getBody();
 	}
 	
 	public SentOrder callLogisticService(Order order) {
 		HttpEntity<Order> request = getHeaders(order);
-	    return clientRest.exchange(URL_LOGISTIC_SERVICE, HttpMethod.POST, request, SentOrder.class).getBody();
+	    return clientRest.exchange(env.getProperty(PARAM_IP_PORT_LOGISTIC_SERVICE) + RESOURCE_PATH_LOGISTIC, HttpMethod.POST, request, SentOrder.class).getBody();
 	}
 
 	private HttpEntity<Order> getHeaders(Order order) {

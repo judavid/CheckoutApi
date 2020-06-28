@@ -7,7 +7,9 @@ public class Bill implements Serializable {
 	private Long sum;
 	private Order order;
 	
-	
+	public Bill() {
+
+	}
 
 	public Bill(Long sum, Order order) {
 		super();
