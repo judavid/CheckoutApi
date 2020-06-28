@@ -9,7 +9,7 @@ import com.billservice.bill.model.Product;
 @Service
 public class BillService {
 	
-	public Bill bill(Order order) {
+	public Bill createBill(Order order) {
 		Long sum = 0L;
 		for(Product p : order.getProducts()) {
 			sum += p.getQuantity() * p.getCost();

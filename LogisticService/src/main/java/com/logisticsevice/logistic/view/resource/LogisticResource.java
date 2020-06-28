@@ -1,4 +1,4 @@
-package com.billservice.bill.view.resources;
+package com.logisticsevice.logistic.view.resource;
 
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -9,24 +9,24 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.billservice.bill.business.service.BillService;
-import com.billservice.bill.model.Bill;
-import com.billservice.bill.model.Order;
+import com.logisticsevice.logistic.business.LogisticService;
+import com.logisticsevice.logistic.model.Order;
+import com.logisticsevice.logistic.model.SentOrder;
 
 
 @RestController
-@RequestMapping(path = "/bill")
-public class BillResources {
+@RequestMapping(path = "/logistic")
+public class LogisticResource {
 	
-	private BillService billService;
+	private LogisticService logisticService;
 	
-	public BillResources(BillService billService) {
-		this.billService = billService;
+	public LogisticResource(LogisticService logisticService) {
+		this.logisticService = logisticService;
 	}
 
 	@PostMapping( produces = MediaType.APPLICATION_JSON_VALUE)
-	public @ResponseBody Bill createBill(@RequestBody Order order) {
-		return billService.createBill(order);
+	public @ResponseBody SentOrder sentOrder(@RequestBody Order order) {
+		return logisticService.createOrder(order);
 	}
 	
 }
