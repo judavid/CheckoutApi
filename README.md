@@ -1,9 +1,9 @@
 # CheckoutApi
 Checkout Api
 
-In this project sprint-boot was used to create and configure each of the projects of each microservice, 
-for the creation of the applications the spring framework is used with the MVC pattern, the compilation 
-is done with maven and the deployment in a dockerized environment it is done with docker compose.
+In this project, sprint-boot was used to create and configure each of the projects of each microservice, 
+for the creation of the applications the spring framework is used with the MVC pattern and the documentation api
+was used swagger2, the compilation is done with maven and the deployment in a dockerized environment it is done with docker compose.
 
 ### Prerequisites
 install
