@@ -6,7 +6,7 @@ for the creation of the applications the spring framework is used with the MVC p
 was used swagger2, the compilation is done with maven and the deployment in a dockerized environment it is done with docker compose.
 
 ### Prerequisites
-install
+Install
 * jdk8
 * Docker version 19.03.5 or higher
 * docker-compose version 1.24.1 or higher
