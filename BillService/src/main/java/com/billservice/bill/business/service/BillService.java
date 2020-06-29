@@ -16,5 +16,15 @@ public class BillService {
 		}
 		return new Bill(sum,  order);
 	}
+	
+	//TODO
+	public Bill updateBill(Integer idBill, Order order) {
+		return new Bill(null,  order);
+	}
+	
+	//TODO
+	public Bill deleteBill(Integer idBill) {
+		return new Bill(null, null);
+	}
 
 }

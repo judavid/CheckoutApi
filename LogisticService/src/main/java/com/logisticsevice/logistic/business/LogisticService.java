@@ -18,5 +18,15 @@ public class LogisticService {
 		String shippingAddress = order.getDirection();
 		return new SentOrder(guide, order.getClientId(), date, shippingAddress, shippingCompany, order.getProducts());
 	}
+	
+	//TODO
+	public SentOrder updateOrder(Integer idSentOder, Order order) {
+		return new SentOrder();
+	}
+	
+	//TODO
+	public SentOrder deleteOrder(Integer IdSentOrder) {
+		return new SentOrder();
+	}
 
 }
